@@ -2,6 +2,9 @@ package com.sihai.sihairpc.server;
 
 import io.vertx.core.Vertx;
 
+/**
+ * Vert.x HTTP 服务器
+ */
 public class VertxHttpServer implements HttpServer {
 
     public void doStart(int port) {

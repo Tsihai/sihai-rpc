@@ -35,24 +35,8 @@ public class ConfigUtils {
         if (StrUtil.isNotBlank(environment)) {
             configFileBuilder.append("-").append(environment);
         }
-        // 可能的配置文件扩展名列表
-        String[] extensions = {".yml", ".yaml", ".properties"};
-
-        Props props = null;
-        for (String extension : extensions) {
-            try {
-                props = new Props(configFileBuilder + extension);
-                // 成功加载则跳出循环
-                break;
-            } catch (Exception ignored) {
-                // 忽略异常，继续尝试下一个扩展名
-            }
-        }
-
-        if (props == null) {
-            throw new RuntimeException("No configuration file found for any of the supported formats: .yml, .yaml, .properties.");
-        }
-
+        configFileBuilder.append(".properties");
+        Props props = new Props(configFileBuilder.toString());
         return props.toBean(tClass, prefix);
     }
 }
