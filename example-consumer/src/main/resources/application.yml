@@ -1,0 +1,4 @@
+rpc:
+  name: sihai-rpc-consumer
+  version: 2.0
+  port: 8091

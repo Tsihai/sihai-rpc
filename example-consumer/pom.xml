@@ -9,9 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <!-- rpc -->
         <dependency>
             <groupId>com.sihai</groupId>
-            <artifactId>sihai-rpc-easy</artifactId>
+            <artifactId>sihai-rpc-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
@@ -20,12 +21,14 @@
             <artifactId>example-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <!-- https://doc.hutool.cn/ -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.8.16</version>
         </dependency>
+
         <!-- https://projectlombok.org/ -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -35,5 +38,18 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
