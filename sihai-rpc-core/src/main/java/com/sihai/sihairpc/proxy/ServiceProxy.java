@@ -2,9 +2,11 @@ package com.sihai.sihairpc.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
+import com.sihai.sihairpc.RpcApplication;
 import com.sihai.sihairpc.model.RpcRequest;
 import com.sihai.sihairpc.model.RpcResponse;
-import com.sihai.sihairpc.serializer.JdkSerializer;
+import com.sihai.sihairpc.serializer.factory.SerializerFactory;
+import com.sihai.sihairpc.serializer.java.JdkSerializer;
 import com.sihai.sihairpc.serializer.Serializer;
 
 import java.io.IOException;
@@ -24,8 +26,9 @@ public class ServiceProxy implements InvocationHandler {
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
         // 指定序列化器
-        Serializer serializer = new JdkSerializer();
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 构造请求
         RpcRequest rpcRequest = RpcRequest.builder()

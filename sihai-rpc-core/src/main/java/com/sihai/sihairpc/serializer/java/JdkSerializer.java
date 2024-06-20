@@ -1,4 +1,6 @@
-package com.sihai.sihairpc.serializer;
+package com.sihai.sihairpc.serializer.java;
+
+import com.sihai.sihairpc.serializer.Serializer;
 
 import java.io.*;
 

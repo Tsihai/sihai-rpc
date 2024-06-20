@@ -1,0 +1,2 @@
+a=com.sihai.sihairpc.serializer.java.JdkSerializer
+b=com.sihai.sihairpc.serializer.hessian.HessianSerializer

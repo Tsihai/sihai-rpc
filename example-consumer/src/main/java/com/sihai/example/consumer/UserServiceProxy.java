@@ -6,7 +6,7 @@ import com.sihai.example.common.model.User;
 import com.sihai.example.common.service.UserService;
 import com.sihai.sihairpc.model.RpcRequest;
 import com.sihai.sihairpc.model.RpcResponse;
-import com.sihai.sihairpc.serializer.JdkSerializer;
+import com.sihai.sihairpc.serializer.java.JdkSerializer;
 import com.sihai.sihairpc.serializer.Serializer;
 
 import java.io.IOException;
